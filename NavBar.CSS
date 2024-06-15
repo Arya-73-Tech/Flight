@@ -1,0 +1,478 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* background: linear-gradient(180deg, #0d47a1, #1e88e5); */
+    height: 100%;
+    width: 100%;
+    /* overflow: hidden; */
+    /* overflow-y: scroll; */
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    /* background: linear-gradient(180deg, #0d47a1, #1e88e5); */
+     height: 80px;
+    width: 100vw; 
+    position: relative;
+    z-index: 100;
+}
+.navbar i{
+    font-size: 50px;
+    color: #ffffff;
+}
+.logo{
+    background-color: #c8cdd6;
+    height: fit-content;
+    width: fit-content;
+
+}
+.logo img{
+    height: 80px;
+    width: 80px;
+}
+
+.nav{
+    display: flex;
+   justify-content: space-between;
+   width: 50vw;
+   margin-right: 80px;
+   transition: 0.5s;
+
+  
+}
+.nav a{
+    display: flex;
+    text-decoration: none;
+    color: #ffffff;
+}
+.nav a.active{
+    color: #4ea8f8;
+}
+.nav a:hover{
+
+    color: #4ea8f8;
+    transition: 0.2s;
+}
+
+ .navbar .bx{
+    display: none;
+}
+ .bx{
+    font-size:50px ;
+    color: #ffffff;
+}
+
+/* ------------------SILDER CODE  STYLING START FROM HERE -----------  */
+.main{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: -80px;
+    position: relative;
+}
+.main .list .items{
+    position: absolute;
+    inset: 0 0 0 0;
+}
+.main .list .items img{
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+}
+.main .list .items .abouts{
+    position: absolute;
+    top: 20%;
+    width: 1140px;
+     max-width: 80%;
+     left: 50%;
+     transform: translateX(-50%);
+     padding-right: 30%;
+     box-sizing: border-box;
+     color: #ffffff;
+     text-shadow: 0px 5 px 10px black;
+}
+.main .list .items .abouts .heading{
+    font-weight: bolder;
+    letter-spacing: 10px;
+}
+.main .list .items .abouts .title{
+    font-weight: bold;
+    font-size: 5rem;
+    line-height: 1.3em;
+    color: orangered;
+    
+}
+.main .list .items .abouts .button{
+    display: grid;
+    grid-template-columns: 130px;
+    grid-template-rows: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.main .list .items .abouts button{
+    border-radius: 10px;
+    border: none;
+    letter-spacing: 2.5px;
+    background: rgba(57, 107, 129, 0.61);
+    font-weight: 600;
+    font-size: 14px;
+    
+    color: rgb(88, 172, 251);
+    box-shadow: 0px 0px 5px 5px rgb(94, 149, 244);
+    transition: 0.4s;
+}
+.main .list .items .abouts button:hover{
+    color: #0d47a1;
+    background-color: #eee;
+    box-shadow: 0px 0px 5px 5px #04ea60;
+}
+/* ----------------------Silder code styling start here---------------- */
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    left: 30%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+  
+}
+.thumbnail .items{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+    
+}
+.thumbnail .items img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.247);
+}
+.thumbnail .items .abouts{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+.thumbnail .items .abouts .title{
+    color: orangered;
+    font-weight: bold;
+}
+.thumbnail .items .abouts .des{
+    color: #ffffff;
+}
+/* ------------arrow------------- */
+.arrows{
+    position: absolute;
+    top: 80%;
+    right: 62%;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+}
+.arrows button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(238, 238, 238, 0.342);
+    border: none;
+    font-family: monospace;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: large;
+    transition: 0.5s;
+    z-index: 100;
+}
+.arrows button:hover{
+    background-color: #eee;
+    color: #555;
+}
+/* -------Animation----------- */
+.main .list .items:nth-child(1){
+    z-index: 1;
+}
+.main .list .items:nth-child(1) .heading,
+.main .list .items:nth-child(1) .title,
+.main .list .items:nth-child(1) .des,
+.main .list .items:nth-child(1) .button{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 1s linear 1 forwards;
+}
+/* -------------heading title font effect --------------------------- */
+@keyframes showContent{
+    to{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+
+}
+.main .list .items:nth-child(1) .heading{
+    animation-delay: .6s ;
+}
+.main .list .items:nth-child(1) .title{
+    animation-delay: .8s;
+}
+.main .list .items:nth-child(1) .des{
+    animation-delay: 1s;
+}
+.main .list .items:nth-child(1) .button{
+    animation-delay: 1.2s;
+}
+/* effoct on arrow  next----------Animation-------- */
+.main.next .list .items:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    left: 30%;
+    bottom: 50px;
+    border-radius: 20px;
+    animation: showImage 0.5s linear 1 forwards;
+}
+@keyframes showImage{
+    to{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
+}
+.main.next .thumbnail .items:nth-last-child(1){
+    width: 0;
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+@keyframes showThumbnail{
+    to{
+        width: 150px;
+    }
+}
+.main.next .thumbnail{
+    transform: translateX(150px);
+    animation: transformThumbnail .5s linear 1 forwards;
+}
+@keyframes transformThumbnail{
+    to{
+        transform: translateX(0);
+    }
+    
+}
+/* previous - ecffect ------------------------ */
+
+.main.prev .list .items:nth-child(2){
+    z-index: 2;
+}
+.main.prev .list .items:nth-child(2) img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: outImage .5s linear 1 forwards;
+}
+@keyframes outImage{
+    to{
+        width: 150px;
+        height: 220px;
+        border-radius: 20px;
+        left: 30%;
+        bottom: 50px;
+    }
+}
+.main.prev .thumbnail .items:nth-child(1){
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.main.prev .list .items:nth-child(2) .heading,
+.main.prev .list .items:nth-child(2) .title,
+.main.prev .list .items:nth-child(2) .des,
+.main.prev .list .items:nth-child(2) .button{
+    animation: contentOut .5s linear 1 forwards;
+}
+@keyframes contentOut{
+    to{
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+.main.next .arrows button,
+.main.prev.arrows button{
+    pointer-events: none;
+}
+.time{
+    width: 0%;
+    height: 5px;
+    background-color: orangered;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+.main.next .time,
+.main.prev .time{
+    width: 200%;
+    animation: timeRunning 2s linear 1 forwards;
+}
+@keyframes timeRunning{
+    to{
+        width: 0;
+    }
+}
+
+
+/* -----------------------responsive code start from here---------------> */
+
+@media (max-width: 768px){
+    .navbar .bx{
+        display: block;
+
+    }
+   .active{
+    
+    top: 80px !important ;
+    /* right: 0% !important; */
+    visibility: visible !important;
+    
+   }
+    .nav{
+        display: block;
+        position: absolute;
+         top: -100%; 
+         /* right: -100%; */
+        /* left: 60vw; */ 
+        background: linear-gradient(180deg, #0d47a1, #1e88e5);
+        text-align: center;
+        height: fit-content;
+        width: 100vw;
+        padding: 10px;
+       visibility: hidden;
+        border-radius: 4px;
+    }
+    .nav a{
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        transition: 0.2s;
+    }
+    /* -------------------slider responsive code----------- */
+    
+    .main .list .items .abouts{
+        padding: 0;
+        top: 80px;
+        margin-left: 10%;
+        justify-content: center;
+    }
+    .main .list .items .abouts .title{
+        font-size: 70px;
+    }
+    .main .thumbnail .items{
+        display: flex;
+        width: 120px;
+        height: 180px;
+        right: 10%;
+        
+        
+    }
+    .main .arrows{
+        display: flex;
+        top: 92%;
+        left: 50%;
+    }
+    
+
+}
+/* -------------footer code start here------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.content {
+    min-height: 80vh; /* To ensure footer is at the bottom */
+}
+
+footer {
+    background-color: #242526;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 20px;
+    min-width: 250px;
+}
+
+.footer-section h2 {
+    margin-bottom: 20px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    margin-right: 10px;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
